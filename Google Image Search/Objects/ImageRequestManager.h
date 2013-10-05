@@ -14,6 +14,7 @@ typedef void(^FailedSearchBlock)(NSError *error);
 @interface ImageRequestManager : NSObject
 
 + (id)imageRequestWithSearchQueryString:(NSString *)queryString success:(SucessfulSearchBlock)successBlock failure:(FailedSearchBlock)failureBlock;
-- (NSURL *)endpointURLForQueryString:(NSString *)queryString andNumberOfResults:(int)numberOfResults;
+- (void)fetchMoreImageResultsStartingAt:(int)startAt success:(SucessfulSearchBlock)successBlock failure:(FailedSearchBlock)failureBlock;
+- (NSURL *)endpointURLForQueryString:(NSString *)queryString startingAt:(int)startAt andNumberOfResults:(int)numberOfResults;
 
 @end

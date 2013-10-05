@@ -24,6 +24,9 @@
 		3F0041F017FF6B5A0063360A /* Google_Image_SearchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F0041EF17FF6B5A0063360A /* Google_Image_SearchTests.m */; };
 		3F0041FC17FF6D770063360A /* ImageSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F0041FA17FF6D770063360A /* ImageSearchViewController.m */; };
 		3F00420017FF6DA60063360A /* ImageRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F0041FF17FF6DA60063360A /* ImageRequestManager.m */; };
+		3F00420217FF7C2B0063360A /* ThreeImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F00420117FF7C2B0063360A /* ThreeImageCell.xib */; };
+		3F00420517FF7CFB0063360A /* ThreeImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F00420417FF7CFB0063360A /* ThreeImageCell.m */; };
+		3F00420717FF828F0063360A /* ImageSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F00420617FF828F0063360A /* ImageSearchViewController.xib */; };
 		8E57B19838B9418CAAF4F20A /* libPods-Google Image Search.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 354C1D2EF19D4E5F810AC438 /* libPods-Google Image Search.a */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +64,10 @@
 		3F0041FA17FF6D770063360A /* ImageSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageSearchViewController.m; path = Controllers/ImageSearchViewController.m; sourceTree = "<group>"; };
 		3F0041FE17FF6DA60063360A /* ImageRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageRequestManager.h; path = Objects/ImageRequestManager.h; sourceTree = "<group>"; };
 		3F0041FF17FF6DA60063360A /* ImageRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageRequestManager.m; path = Objects/ImageRequestManager.m; sourceTree = "<group>"; };
+		3F00420117FF7C2B0063360A /* ThreeImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThreeImageCell.xib; sourceTree = "<group>"; };
+		3F00420317FF7CFB0063360A /* ThreeImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThreeImageCell.h; path = Controllers/ThreeImageCell.h; sourceTree = "<group>"; };
+		3F00420417FF7CFB0063360A /* ThreeImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ThreeImageCell.m; path = Controllers/ThreeImageCell.m; sourceTree = "<group>"; };
+		3F00420617FF828F0063360A /* ImageSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageSearchViewController.xib; sourceTree = "<group>"; };
 		CDE6BFD6F02E457DA28C233B /* Pods-Google Image Search.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Google Image Search.xcconfig"; path = "Pods/Pods-Google Image Search.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -136,6 +143,10 @@
 				3F0041FA17FF6D770063360A /* ImageSearchViewController.m */,
 				3F0041FE17FF6DA60063360A /* ImageRequestManager.h */,
 				3F0041FF17FF6DA60063360A /* ImageRequestManager.m */,
+				3F00420117FF7C2B0063360A /* ThreeImageCell.xib */,
+				3F00420317FF7CFB0063360A /* ThreeImageCell.h */,
+				3F00420417FF7CFB0063360A /* ThreeImageCell.m */,
+				3F00420617FF828F0063360A /* ImageSearchViewController.xib */,
 			);
 			path = "Google Image Search";
 			sourceTree = "<group>";
@@ -246,7 +257,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F00420217FF7C2B0063360A /* ThreeImageCell.xib in Resources */,
 				3F0041D117FF6B5A0063360A /* InfoPlist.strings in Resources */,
+				3F00420717FF828F0063360A /* ImageSearchViewController.xib in Resources */,
 				3F0041DC17FF6B5A0063360A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -303,6 +316,7 @@
 				3F0041D317FF6B5A0063360A /* main.m in Sources */,
 				3F00420017FF6DA60063360A /* ImageRequestManager.m in Sources */,
 				3F0041FC17FF6D770063360A /* ImageSearchViewController.m in Sources */,
+				3F00420517FF7CFB0063360A /* ThreeImageCell.m in Sources */,
 				3F0041DA17FF6B5A0063360A /* Google_Image_Search.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
