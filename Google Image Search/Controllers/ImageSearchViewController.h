@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PSTCollectionView.h"
 
-@interface ImageSearchViewController : UITableViewController<UITableViewDataSource, UITableViewDelegate>
+@interface ImageSearchViewController : PSUICollectionViewController<UIAlertViewDelegate>
 
 @end

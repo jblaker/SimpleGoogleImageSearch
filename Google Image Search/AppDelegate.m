@@ -20,7 +20,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   self.window.backgroundColor = [UIColor whiteColor];
-  self.window.rootViewController = [[ImageSearchViewController alloc] init];
+  PSUICollectionViewFlowLayout *layout = [PSUICollectionViewFlowLayout new];
+  [layout setItemSize:CGSizeMake(100, 100)];
+  UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:[[ImageSearchViewController alloc] initWithCollectionViewLayout:layout]];
+  self.window.rootViewController = navController;
   [self.window makeKeyAndVisible];
   return YES;
 }

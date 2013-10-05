@@ -27,7 +27,7 @@
   
   [imageRequestManager setQueryString:queryString];
   
-  NSURLRequest *request = [NSURLRequest requestWithURL:[imageRequestManager endpointURLForQueryString:queryString startingAt:0 andNumberOfResults:6]];
+  NSURLRequest *request = [NSURLRequest requestWithURL:[imageRequestManager endpointURLForQueryString:queryString startingAt:0 andNumberOfResults:8]];
   
   AFJSONRequestOperation *operation = [[AFJSONRequestOperation alloc] initWithRequest:request];
   
@@ -49,7 +49,7 @@
 
 - (void)fetchMoreImageResultsStartingAt:(int)startAt success:(SucessfulSearchBlock)successBlock failure:(FailedSearchBlock)failureBlock {
   
-  NSURLRequest *request = [NSURLRequest requestWithURL:[self endpointURLForQueryString:_queryString startingAt:startAt andNumberOfResults:6]];
+  NSURLRequest *request = [NSURLRequest requestWithURL:[self endpointURLForQueryString:_queryString startingAt:startAt andNumberOfResults:8]];
   
   AFJSONRequestOperation *operation = [[AFJSONRequestOperation alloc] initWithRequest:request];
   
@@ -68,7 +68,7 @@
 }
 
 - (NSURL *)endpointURLForQueryString:(NSString *)queryString startingAt:(int)startAt andNumberOfResults:(int)numberOfResults {
-  NSString *urlString = [[NSString stringWithFormat:@"%@%@&rsz=%i&start=%i&imgsz=small", kBaseEndpointURL, queryString, numberOfResults, startAt] stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+  NSString *urlString = [[NSString stringWithFormat:@"%@%@&rsz=%i&start=%i", kBaseEndpointURL, queryString, numberOfResults, startAt] stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
   NSURL *queryURL = [NSURL URLWithString:urlString];
   return queryURL;
 }
