@@ -56,7 +56,7 @@
   // NSLog(@"inset.bottom: %f", inset.bottom);
   // NSLog(@"pos: %f of %f", y, h);
   
-  float reload_distance = 10;
+  float reload_distance = 0;
   if(y > h + reload_distance && _images.count > 1 && _isRequestinImages == NO) {
     [self requestMoreImages];
   }
@@ -170,7 +170,7 @@
 
 - (PSUICollectionViewCell *)collectionView:(PSUICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
   ImageCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kThreeImageCellIdentifier forIndexPath:indexPath];
-  [cell loadImage:[_images objectAtIndex:indexPath.row]];
+  [cell loadImage:[_images objectAtIndex:indexPath.item]];
   return cell;
 }
 

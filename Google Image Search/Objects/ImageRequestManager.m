@@ -32,8 +32,11 @@
   AFJSONRequestOperation *operation = [[AFJSONRequestOperation alloc] initWithRequest:request];
   
   [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-    if (successBlock) {
+    if (successBlock && [[responseObject objectForKey:@"responseStatus"] intValue] == 200) {
       successBlock(responseObject);
+    }
+    if ( failureBlock && [[responseObject objectForKey:@"responseStatus"] intValue] != 200) {
+      failureBlock(nil);
     }
   } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
     if (failureBlock) {
