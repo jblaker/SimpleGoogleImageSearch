@@ -26,6 +26,7 @@ typedef enum {
   BOOL _isRequestinImages;
   UITextField *_searchQueryTextField;
   UIAlertView *_searchQueryAlertView;
+  BOOL _hasShownAutoPopup;
 }
 
 @end
@@ -37,8 +38,6 @@ typedef enum {
 - (id)initWithCollectionViewLayout:(PSTCollectionViewLayout *)layout {
   if (self = [super initWithCollectionViewLayout:layout]) {
     [self setTitle:@"Image Search"];
-    
-    [[[self navigationController] navigationBar] setTintColor:[UIColor darkGrayColor]];
     
     _imageRequestManager = [[ImageRequestManager alloc] init];
     
@@ -54,11 +53,15 @@ typedef enum {
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  
-  
-  
-  [self doSearch:nil];
-  
+  [[[self navigationController] navigationBar] setTintColor:[UIColor darkGrayColor]];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+  [super viewDidAppear:animated];
+  if (_hasShownAutoPopup == NO) {
+    [self doSearch:nil];
+    _hasShownAutoPopup = YES;
+  }
 }
 
 #pragma mark - Scroll View Delegate
@@ -109,6 +112,7 @@ typedef enum {
     [self doSearchWithString:searchQuery];
   }];
   UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:savedSearchesVC];
+  [navController setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
   [self presentViewController:navController animated:YES completion:nil];
 }
 

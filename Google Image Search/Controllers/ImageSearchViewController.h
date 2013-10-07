@@ -17,5 +17,6 @@
 
 - (void)doSearchWithString:(NSString *)queryString;
 - (void)requestMoreImages;
+- (void)showPreviousSearches:(id)sender;
 
 @end
