@@ -30,6 +30,7 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   [self setTitle:@"Search History"];
+  [[[self navigationController] navigationBar] setTintColor:[UIColor darkGrayColor]];
   [self buildBarButtonItems];
 }
 

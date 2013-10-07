@@ -14,6 +14,10 @@
 
 #define kThreeImageCellIdentifier @"ThreeImageCell"
 
+typedef enum {
+  SearchQueryTextField
+}TextFields;
+
 @interface ImageSearchViewController () {
   NSArray *_pages;
   NSMutableArray *_images;
@@ -21,6 +25,8 @@
   ImageRequestManager *_imageRequestManager;
   int _currentPageIndex;
   BOOL _isRequestinImages;
+  UITextField *_searchQueryTextField;
+  UIAlertView *_searchQueryAlertView;
 }
 
 @end
@@ -29,6 +35,10 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  
+  [self setTitle:@"Image Search"];
+  
+  [[[self navigationController] navigationBar] setTintColor:[UIColor darkGrayColor]];
   
   [self buildBarButtonItems];
   
@@ -67,7 +77,7 @@
 
 - (void)buildBarButtonItems {
   
-  UIBarButtonItem *previousSearchButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(showPreviousSearches:)];
+  UIBarButtonItem *previousSearchButton = [[UIBarButtonItem alloc] initWithTitle:@"Search History" style:UIBarButtonItemStyleBordered target:self action:@selector(showPreviousSearches:)];
   
   [[self navigationItem] setLeftBarButtonItem:previousSearchButton];
   
@@ -76,9 +86,12 @@
 }
 
 - (void)doSearch:(id)sender  {
-  UIAlertView *searchAlert = [[UIAlertView alloc] initWithTitle:@"New Search" message:nil delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Search", nil];
-  [searchAlert setAlertViewStyle:UIAlertViewStylePlainTextInput];
-  [searchAlert show];
+  _searchQueryAlertView = [[UIAlertView alloc] initWithTitle:@"New Search" message:nil delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Search", nil];
+  [_searchQueryAlertView setAlertViewStyle:UIAlertViewStylePlainTextInput];
+  _searchQueryTextField = [_searchQueryAlertView textFieldAtIndex:0];
+  [_searchQueryTextField setDelegate:self];
+  [_searchQueryTextField setTag:SearchQueryTextField];
+  [_searchQueryAlertView show];
 }
 
 - (void)showPreviousSearches:(id)sender {
@@ -139,25 +152,12 @@
     
     [_imageRequestManager fetchMoreImageResultsStartingAt:startAt success:^(NSDictionary *response) {
       
-      //int startAt = [[[_pages objectAtIndex:2] objectForKey:@"start"] intValue];
       _currentPageIndex = 2;
       [_images addObjectsFromArray:[[response objectForKey:@"responseData"] objectForKey:@"results"]];
       
       [_hud hide:YES];
       [[self collectionView] reloadData];
       _isRequestinImages = NO;
-      
-//      [_imageRequestManager fetchMoreImageResultsStartingAt:startAt success:^(NSDictionary *response) {
-//        
-//        [_images addObjectsFromArray:[[response objectForKey:@"responseData"] objectForKey:@"results"]];
-//        [_hud hide:YES];
-//        [[self collectionView] reloadData];
-//        _isRequestinImages = NO;
-//        
-//      } failure:^(NSError *error) {
-//        NSLog(@"%@", error.localizedDescription);
-//        [_hud hide:YES];
-//      }];
       
     } failure:^(NSError *error) {
       NSLog(@"%@", error.localizedDescription);
@@ -170,6 +170,17 @@
     [_hud hide:YES];
     
   }];
+}
+
+#pragma mark - Text Field Delegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+  if ([textField tag] == SearchQueryTextField) {
+    [self doSearchWithString:[_searchQueryTextField text]];
+    [_searchQueryAlertView dismissWithClickedButtonIndex:1 animated:YES];
+    return NO;
+  }
+  return YES;
 }
 
 #pragma mark - Alert View Delegate

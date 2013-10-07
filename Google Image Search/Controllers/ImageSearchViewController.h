@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "PSTCollectionView.h"
 
-@interface ImageSearchViewController : PSUICollectionViewController<UIAlertViewDelegate>
+@interface ImageSearchViewController : PSUICollectionViewController<UIAlertViewDelegate, UITextFieldDelegate>
 
 @end
