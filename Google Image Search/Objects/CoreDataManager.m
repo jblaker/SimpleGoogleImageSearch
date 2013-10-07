@@ -12,6 +12,8 @@
 
 @implementation CoreDataManager
 
+@synthesize managedObjectContext=_managedObjectContext;
+
 + (CoreDataManager *)sharedManager {
   static dispatch_once_t pred;
   static CoreDataManager *sharedManager = nil;
@@ -22,6 +24,14 @@
   return sharedManager;
 }
 
+- (id)init {
+  if (self = [super init]) {
+    AppDelegate *ad = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [self setManagedObjectContext:[ad managedObjectContext]];
+  }
+  return self;
+}
+
 - (void)saveSearch:(NSString *)queryString {
   
   // Check to see if this search already exists, if it does do not save
@@ -30,29 +40,43 @@
     return;
   }
   
-  AppDelegate *ad = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-  NSManagedObjectContext *moc = [ad managedObjectContext];
-  ImageSearch *newSearch = [NSEntityDescription insertNewObjectForEntityForName:@"ImageSearch" inManagedObjectContext:moc];
+  ImageSearch *newSearch = [NSEntityDescription insertNewObjectForEntityForName:@"ImageSearch" inManagedObjectContext:_managedObjectContext];
   [newSearch setSearchQuery:[queryString lowercaseString]];
-  NSError *error;
-  if (![ad.managedObjectContext save:&error]) {
-    NSLog(@"Error Saving: %@", [error localizedDescription]);
-  }
+  
+  AppDelegate *ad = [[UIApplication sharedApplication] delegate];
+  [ad saveContext];
 }
 
 - (NSArray *)arrayOfSearchesMatchingQueryString:(NSString *)queryString {
-  AppDelegate *ad = (AppDelegate *)[[UIApplication sharedApplication] delegate];
 
   NSError *error = nil;
-  NSManagedObjectContext *context = [ad managedObjectContext];
   NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-  NSEntityDescription *entity = [NSEntityDescription entityForName:@"ImageSearch" inManagedObjectContext:context];
+  NSEntityDescription *entity = [NSEntityDescription entityForName:@"ImageSearch" inManagedObjectContext:_managedObjectContext];
   
   NSPredicate *predicate = [NSPredicate predicateWithFormat:@"searchQuery = %@", [queryString lowercaseString]];
   [fetchRequest setPredicate:predicate];
   
   [fetchRequest setEntity:entity];
-  return [context executeFetchRequest:fetchRequest error:&error];
+  return [_managedObjectContext executeFetchRequest:fetchRequest error:&error];
+}
+
+- (void)clearSearchHistory {
+  
+  AppDelegate *ad = [[UIApplication sharedApplication] delegate];
+  
+  NSError *error = nil;
+  NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+  NSEntityDescription *entity = [NSEntityDescription entityForName:@"ImageSearch" inManagedObjectContext:_managedObjectContext];
+  
+  [fetchRequest setEntity:entity];
+  NSArray *searches = [_managedObjectContext executeFetchRequest:fetchRequest error:&error];
+  
+  [searches enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+    [_managedObjectContext deleteObject:obj];
+  }];
+  
+  [ad saveContext];
+  
 }
 
 @end

@@ -20,15 +20,13 @@
 
 @implementation ImageRequestManager
 
-@synthesize queryString=_queryString;
+@synthesize queryString=_queryString, coreDataManager=_coreDataManager;
 
-+ (id)imageRequestWithSearchQueryString:(NSString *)queryString success:(SucessfulSearchBlock)successBlock failure:(FailedSearchBlock)failureBlock {
+- (void)imageRequestWithSearchQueryString:(NSString *)queryString success:(SucessfulSearchBlock)successBlock failure:(FailedSearchBlock)failureBlock {
   
-  ImageRequestManager *imageRequestManager = [[ImageRequestManager alloc] init];
+  [self setQueryString:queryString];
   
-  [imageRequestManager setQueryString:queryString];
-  
-  NSURLRequest *request = [NSURLRequest requestWithURL:[imageRequestManager endpointURLForQueryString:queryString startingAt:0 andNumberOfResults:8]];
+  NSURLRequest *request = [NSURLRequest requestWithURL:[self endpointURLForQueryString:queryString startingAt:0 andNumberOfResults:8]];
   
   AFJSONRequestOperation *operation = [[AFJSONRequestOperation alloc] initWithRequest:request];
   
@@ -47,10 +45,12 @@
   
   [operation start];
   
-  [[CoreDataManager sharedManager] saveSearch:queryString];
+  [self saveToSearchHistory];
   
-  return imageRequestManager;
-  
+}
+
+- (void)saveToSearchHistory {
+  [[CoreDataManager sharedManager] saveSearch:_queryString];
 }
 
 - (void)fetchMoreImageResultsStartingAt:(int)startAt success:(SucessfulSearchBlock)successBlock failure:(FailedSearchBlock)failureBlock {

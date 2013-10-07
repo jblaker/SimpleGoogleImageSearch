@@ -9,6 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "PSTCollectionView.h"
 
+@class ImageRequestManager;
+
 @interface ImageSearchViewController : PSUICollectionViewController<UIAlertViewDelegate, UITextFieldDelegate>
+
+@property (nonatomic, strong) ImageRequestManager *imageRequestManager;
+
+- (void)doSearchWithString:(NSString *)queryString;
+- (void)requestMoreImages;
 
 @end

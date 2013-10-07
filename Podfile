@@ -10,5 +10,6 @@ end
 
 target "Google Image SearchTests" do
 pod 'PSTCollectionView', '~> 1.1.0'
+pod 'OCMock', '~> 2.2.1'
 end
 

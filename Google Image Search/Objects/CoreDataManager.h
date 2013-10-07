@@ -10,7 +10,10 @@
 
 @interface CoreDataManager : NSObject
 
+@property (nonatomic, weak) NSManagedObjectContext *managedObjectContext;
+
 + (CoreDataManager *)sharedManager;
 - (void)saveSearch:(NSString *)queryString;
+- (void)clearSearchHistory;
 
 @end

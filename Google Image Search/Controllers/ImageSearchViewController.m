@@ -22,7 +22,6 @@ typedef enum {
   NSArray *_pages;
   NSMutableArray *_images;
   MBProgressHUD *_hud;
-  ImageRequestManager *_imageRequestManager;
   int _currentPageIndex;
   BOOL _isRequestinImages;
   UITextField *_searchQueryTextField;
@@ -33,19 +32,30 @@ typedef enum {
 
 @implementation ImageSearchViewController
 
+@synthesize imageRequestManager=_imageRequestManager;
+
+- (id)initWithCollectionViewLayout:(PSTCollectionViewLayout *)layout {
+  if (self = [super initWithCollectionViewLayout:layout]) {
+    [self setTitle:@"Image Search"];
+    
+    [[[self navigationController] navigationBar] setTintColor:[UIColor darkGrayColor]];
+    
+    _imageRequestManager = [[ImageRequestManager alloc] init];
+    
+    [self buildBarButtonItems];
+    
+    [[self collectionView] setBackgroundColor:[UIColor whiteColor]];
+    
+    // Register the nib for the table cells
+    [[self collectionView] registerClass:[ImageCell class] forCellWithReuseIdentifier:kThreeImageCellIdentifier];
+  }
+  return self;
+}
+
 - (void)viewDidLoad {
   [super viewDidLoad];
   
-  [self setTitle:@"Image Search"];
   
-  [[[self navigationController] navigationBar] setTintColor:[UIColor darkGrayColor]];
-  
-  [self buildBarButtonItems];
-  
-  [[self collectionView] setBackgroundColor:[UIColor whiteColor]];
-  
-  // Register the nib for the table cells
-  [[self collectionView] registerClass:[ImageCell class] forCellWithReuseIdentifier:kThreeImageCellIdentifier];
   
   [self doSearch:nil];
   
@@ -77,7 +87,7 @@ typedef enum {
 
 - (void)buildBarButtonItems {
   
-  UIBarButtonItem *previousSearchButton = [[UIBarButtonItem alloc] initWithTitle:@"Search History" style:UIBarButtonItemStyleBordered target:self action:@selector(showPreviousSearches:)];
+  UIBarButtonItem *previousSearchButton = [[UIBarButtonItem alloc] initWithTitle:@"History" style:UIBarButtonItemStyleBordered target:self action:@selector(showPreviousSearches:)];
   
   [[self navigationItem] setLeftBarButtonItem:previousSearchButton];
   
@@ -103,7 +113,6 @@ typedef enum {
 }
 
 - (void)requestMoreImages {
-  NSLog(@"%i total images", _images.count);
   if ( _currentPageIndex < _pages.count-1) {
   
     _hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
@@ -142,7 +151,7 @@ typedef enum {
   [_hud setLabelText:@"Searching..."];
   
   // Initiate the request
-  _imageRequestManager = [ImageRequestManager imageRequestWithSearchQueryString:queryString success:^(NSDictionary *response) {
+  [_imageRequestManager imageRequestWithSearchQueryString:queryString success:^(NSDictionary *response) {
     
     _pages = [[[response objectForKey:@"responseData"] objectForKey:@"cursor"] objectForKey:@"pages"];
     _images = [NSMutableArray arrayWithArray:[[response objectForKey:@"responseData"] objectForKey:@"results"]];
