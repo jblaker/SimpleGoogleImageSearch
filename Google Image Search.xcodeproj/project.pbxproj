@@ -27,6 +27,8 @@
 		3F6CD873180329E70086F3AF /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F6CD872180329E70086F3AF /* CoreDataManager.m */; };
 		3F6CD87618032A9F0086F3AF /* ImageSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F6CD87518032A9F0086F3AF /* ImageSearch.m */; };
 		3F6CD87D18032BE60086F3AF /* SavedSearchesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F6CD87C18032BE60086F3AF /* SavedSearchesViewController.m */; };
+		3F6CD87F1803368B0086F3AF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F0041C617FF6B5A0063360A /* CoreGraphics.framework */; };
+		8860D73244714802BABB8316 /* libPods-Google Image SearchTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F77756CBCD64181B6946AB6 /* libPods-Google Image SearchTests.a */; };
 		8E57B19838B9418CAAF4F20A /* libPods-Google Image Search.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 354C1D2EF19D4E5F810AC438 /* libPods-Google Image Search.a */; };
 		E9471B2D180092E0004F614A /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E9471B2C180092E0004F614A /* ImageCell.m */; };
 		E9471B2F1800A359004F614A /* MissingImage.png in Resources */ = {isa = PBXBuildFile; fileRef = E9471B2E1800A359004F614A /* MissingImage.png */; };
@@ -72,6 +74,8 @@
 		3F6CD87518032A9F0086F3AF /* ImageSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageSearch.m; path = Objects/ImageSearch.m; sourceTree = "<group>"; };
 		3F6CD87B18032BE60086F3AF /* SavedSearchesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SavedSearchesViewController.h; path = Controllers/SavedSearchesViewController.h; sourceTree = "<group>"; };
 		3F6CD87C18032BE60086F3AF /* SavedSearchesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SavedSearchesViewController.m; path = Controllers/SavedSearchesViewController.m; sourceTree = "<group>"; };
+		505BB6B7F78C49E9911D31CD /* Pods-Google Image SearchTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Google Image SearchTests.xcconfig"; path = "Pods/Pods-Google Image SearchTests.xcconfig"; sourceTree = "<group>"; };
+		7F77756CBCD64181B6946AB6 /* libPods-Google Image SearchTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Google Image SearchTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDE6BFD6F02E457DA28C233B /* Pods-Google Image Search.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Google Image Search.xcconfig"; path = "Pods/Pods-Google Image Search.xcconfig"; sourceTree = "<group>"; };
 		E9471B2B180092E0004F614A /* ImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageCell.h; path = Objects/ImageCell.h; sourceTree = "<group>"; };
 		E9471B2C180092E0004F614A /* ImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageCell.m; path = Objects/ImageCell.m; sourceTree = "<group>"; };
@@ -95,10 +99,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F6CD87F1803368B0086F3AF /* CoreGraphics.framework in Frameworks */,
 				3F0041E317FF6B5A0063360A /* XCTest.framework in Frameworks */,
 				3F0041E617FF6B5A0063360A /* CoreData.framework in Frameworks */,
 				3F0041E517FF6B5A0063360A /* UIKit.framework in Frameworks */,
 				3F0041E417FF6B5A0063360A /* Foundation.framework in Frameworks */,
+				8860D73244714802BABB8316 /* libPods-Google Image SearchTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +119,7 @@
 				3F0041C317FF6B5A0063360A /* Frameworks */,
 				3F0041C217FF6B5A0063360A /* Products */,
 				CDE6BFD6F02E457DA28C233B /* Pods-Google Image Search.xcconfig */,
+				505BB6B7F78C49E9911D31CD /* Pods-Google Image SearchTests.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -134,6 +141,7 @@
 				3F0041CA17FF6B5A0063360A /* CoreData.framework */,
 				3F0041E217FF6B5A0063360A /* XCTest.framework */,
 				354C1D2EF19D4E5F810AC438 /* libPods-Google Image Search.a */,
+				7F77756CBCD64181B6946AB6 /* libPods-Google Image SearchTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -250,9 +258,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3F0041F617FF6B5A0063360A /* Build configuration list for PBXNativeTarget "Google Image SearchTests" */;
 			buildPhases = (
+				66CA0840CB69448F855F4E12 /* Check Pods Manifest.lock */,
 				3F0041DD17FF6B5A0063360A /* Sources */,
 				3F0041DE17FF6B5A0063360A /* Frameworks */,
 				3F0041DF17FF6B5A0063360A /* Resources */,
+				4992409E284D41D5BB86CD4B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -346,6 +356,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Pods-Google Image Search-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4992409E284D41D5BB86CD4B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-Google Image SearchTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		66CA0840CB69448F855F4E12 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -513,6 +553,7 @@
 		};
 		3F0041F717FF6B5A0063360A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 505BB6B7F78C49E9911D31CD /* Pods-Google Image SearchTests.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Google Image Search.app/Google Image Search";
@@ -536,6 +577,7 @@
 		};
 		3F0041F817FF6B5A0063360A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 505BB6B7F78C49E9911D31CD /* Pods-Google Image SearchTests.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Google Image Search.app/Google Image Search";

@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "ImageRequestManager.h"
 
 @interface Google_Image_SearchTests : XCTestCase
 
@@ -26,9 +27,14 @@
     [super tearDown];
 }
 
-- (void)testExample
-{
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+- (void)testEndpointURL {
+  ImageRequestManager *imageRequestManager = [[ImageRequestManager alloc] init];
+  
+  NSString *urlString = [[imageRequestManager endpointURLForQueryString:@"test" startingAt:0 andNumberOfResults:5] absoluteString];
+  XCTAssertTrue([urlString isEqualToString:@"https://ajax.googleapis.com/ajax/services/search/images?v=1.0&q=test&rsz=5&start=0"], @"URL Absolute String should match");
+  
+  urlString = [[imageRequestManager endpointURLForQueryString:@"test" startingAt:5 andNumberOfResults:8] absoluteString];
+  XCTAssertTrue([urlString isEqualToString:@"https://ajax.googleapis.com/ajax/services/search/images?v=1.0&q=test&rsz=8&start=5"], @"URL Absolute String should match");
 }
 
 @end

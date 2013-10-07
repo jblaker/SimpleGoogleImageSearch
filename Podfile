@@ -9,6 +9,6 @@ pod 'PSTCollectionView', '~> 1.1.0'
 end
 
 target "Google Image SearchTests" do
-
+pod 'PSTCollectionView', '~> 1.1.0'
 end
 
