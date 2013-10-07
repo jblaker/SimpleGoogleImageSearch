@@ -125,21 +125,25 @@
     
     [_imageRequestManager fetchMoreImageResultsStartingAt:startAt success:^(NSDictionary *response) {
       
-      int startAt = [[[_pages objectAtIndex:2] objectForKey:@"start"] intValue];
+      //int startAt = [[[_pages objectAtIndex:2] objectForKey:@"start"] intValue];
       _currentPageIndex = 2;
       [_images addObjectsFromArray:[[response objectForKey:@"responseData"] objectForKey:@"results"]];
       
-      [_imageRequestManager fetchMoreImageResultsStartingAt:startAt success:^(NSDictionary *response) {
-        
-        [_images addObjectsFromArray:[[response objectForKey:@"responseData"] objectForKey:@"results"]];
-        [_hud hide:YES];
-        [[self collectionView] reloadData];
-        _isRequestinImages = NO;
-        
-      } failure:^(NSError *error) {
-        NSLog(@"%@", error.localizedDescription);
-        [_hud hide:YES];
-      }];
+      [_hud hide:YES];
+      [[self collectionView] reloadData];
+      _isRequestinImages = NO;
+      
+//      [_imageRequestManager fetchMoreImageResultsStartingAt:startAt success:^(NSDictionary *response) {
+//        
+//        [_images addObjectsFromArray:[[response objectForKey:@"responseData"] objectForKey:@"results"]];
+//        [_hud hide:YES];
+//        [[self collectionView] reloadData];
+//        _isRequestinImages = NO;
+//        
+//      } failure:^(NSError *error) {
+//        NSLog(@"%@", error.localizedDescription);
+//        [_hud hide:YES];
+//      }];
       
     } failure:^(NSError *error) {
       NSLog(@"%@", error.localizedDescription);
