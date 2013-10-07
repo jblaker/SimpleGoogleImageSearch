@@ -10,6 +10,7 @@
 #import "ImageRequestManager.h"
 #import "MBProgressHUD.h"
 #import "ImageCell.h"
+#import "SavedSearchesViewController.h"
 
 #define kThreeImageCellIdentifier @"ThreeImageCell"
 
@@ -65,6 +66,11 @@
 #pragma mark - Helper Methods
 
 - (void)buildBarButtonItems {
+  
+  UIBarButtonItem *previousSearchButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(showPreviousSearches:)];
+  
+  [[self navigationItem] setLeftBarButtonItem:previousSearchButton];
+  
   UIBarButtonItem *searchButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(doSearch:)];
   [[self navigationItem] setRightBarButtonItem:searchButton];
 }
@@ -73,6 +79,14 @@
   UIAlertView *searchAlert = [[UIAlertView alloc] initWithTitle:@"New Search" message:nil delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Search", nil];
   [searchAlert setAlertViewStyle:UIAlertViewStylePlainTextInput];
   [searchAlert show];
+}
+
+- (void)showPreviousSearches:(id)sender {
+  SavedSearchesViewController *savedSearchesVC = [[SavedSearchesViewController alloc] initWithSelectionBlock:^(NSString *searchQuery) {
+    [self doSearchWithString:searchQuery];
+  }];
+  UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:savedSearchesVC];
+  [self presentViewController:navController animated:YES completion:nil];
 }
 
 - (void)requestMoreImages {
@@ -161,8 +175,12 @@
 #pragma mark - Alert View Delegate
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-  if (buttonIndex == 1) {
-    [self doSearchWithString:[[alertView textFieldAtIndex:0] text]];
+  switch(buttonIndex) {
+    case 1:
+      [self doSearchWithString:[[alertView textFieldAtIndex:0] text]];
+      break;
+    default:
+      _isRequestinImages = YES;
   }
 }
 

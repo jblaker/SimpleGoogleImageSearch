@@ -24,6 +24,9 @@
 		3F0041F017FF6B5A0063360A /* Google_Image_SearchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F0041EF17FF6B5A0063360A /* Google_Image_SearchTests.m */; };
 		3F0041FC17FF6D770063360A /* ImageSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F0041FA17FF6D770063360A /* ImageSearchViewController.m */; };
 		3F00420017FF6DA60063360A /* ImageRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F0041FF17FF6DA60063360A /* ImageRequestManager.m */; };
+		3F6CD873180329E70086F3AF /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F6CD872180329E70086F3AF /* CoreDataManager.m */; };
+		3F6CD87618032A9F0086F3AF /* ImageSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F6CD87518032A9F0086F3AF /* ImageSearch.m */; };
+		3F6CD87D18032BE60086F3AF /* SavedSearchesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F6CD87C18032BE60086F3AF /* SavedSearchesViewController.m */; };
 		8E57B19838B9418CAAF4F20A /* libPods-Google Image Search.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 354C1D2EF19D4E5F810AC438 /* libPods-Google Image Search.a */; };
 		E9471B2D180092E0004F614A /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E9471B2C180092E0004F614A /* ImageCell.m */; };
 		E9471B2F1800A359004F614A /* MissingImage.png in Resources */ = {isa = PBXBuildFile; fileRef = E9471B2E1800A359004F614A /* MissingImage.png */; };
@@ -63,6 +66,12 @@
 		3F0041FA17FF6D770063360A /* ImageSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageSearchViewController.m; path = Controllers/ImageSearchViewController.m; sourceTree = "<group>"; };
 		3F0041FE17FF6DA60063360A /* ImageRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageRequestManager.h; path = Objects/ImageRequestManager.h; sourceTree = "<group>"; };
 		3F0041FF17FF6DA60063360A /* ImageRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageRequestManager.m; path = Objects/ImageRequestManager.m; sourceTree = "<group>"; };
+		3F6CD871180329E70086F3AF /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreDataManager.h; path = Objects/CoreDataManager.h; sourceTree = "<group>"; };
+		3F6CD872180329E70086F3AF /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreDataManager.m; path = Objects/CoreDataManager.m; sourceTree = "<group>"; };
+		3F6CD87418032A9F0086F3AF /* ImageSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageSearch.h; path = Objects/ImageSearch.h; sourceTree = "<group>"; };
+		3F6CD87518032A9F0086F3AF /* ImageSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageSearch.m; path = Objects/ImageSearch.m; sourceTree = "<group>"; };
+		3F6CD87B18032BE60086F3AF /* SavedSearchesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SavedSearchesViewController.h; path = Controllers/SavedSearchesViewController.h; sourceTree = "<group>"; };
+		3F6CD87C18032BE60086F3AF /* SavedSearchesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SavedSearchesViewController.m; path = Controllers/SavedSearchesViewController.m; sourceTree = "<group>"; };
 		CDE6BFD6F02E457DA28C233B /* Pods-Google Image Search.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Google Image Search.xcconfig"; path = "Pods/Pods-Google Image Search.xcconfig"; sourceTree = "<group>"; };
 		E9471B2B180092E0004F614A /* ImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageCell.h; path = Objects/ImageCell.h; sourceTree = "<group>"; };
 		E9471B2C180092E0004F614A /* ImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageCell.m; path = Objects/ImageCell.m; sourceTree = "<group>"; };
@@ -132,18 +141,11 @@
 		3F0041CC17FF6B5A0063360A /* Google Image Search */ = {
 			isa = PBXGroup;
 			children = (
-				3F0041D517FF6B5A0063360A /* AppDelegate.h */,
-				3F0041D617FF6B5A0063360A /* AppDelegate.m */,
-				3F0041DB17FF6B5A0063360A /* Images.xcassets */,
-				3F0041D817FF6B5A0063360A /* Google_Image_Search.xcdatamodeld */,
+				3F6CD87A18032B980086F3AF /* Images */,
+				3F6CD87918032B8F0086F3AF /* Controllers */,
+				3F6CD87818032B7E0086F3AF /* Views */,
+				3F6CD87718032B760086F3AF /* Objects */,
 				3F0041CD17FF6B5A0063360A /* Supporting Files */,
-				3F0041F917FF6D770063360A /* ImageSearchViewController.h */,
-				3F0041FA17FF6D770063360A /* ImageSearchViewController.m */,
-				3F0041FE17FF6DA60063360A /* ImageRequestManager.h */,
-				3F0041FF17FF6DA60063360A /* ImageRequestManager.m */,
-				E9471B2B180092E0004F614A /* ImageCell.h */,
-				E9471B2C180092E0004F614A /* ImageCell.m */,
-				E9471B2E1800A359004F614A /* MissingImage.png */,
 			);
 			path = "Google Image Search";
 			sourceTree = "<group>";
@@ -151,6 +153,7 @@
 		3F0041CD17FF6B5A0063360A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3F0041D817FF6B5A0063360A /* Google_Image_Search.xcdatamodeld */,
 				3F0041CE17FF6B5A0063360A /* Google Image Search-Info.plist */,
 				3F0041CF17FF6B5A0063360A /* InfoPlist.strings */,
 				3F0041D217FF6B5A0063360A /* main.m */,
@@ -175,6 +178,50 @@
 				3F0041EC17FF6B5A0063360A /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3F6CD87718032B760086F3AF /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				3F0041D517FF6B5A0063360A /* AppDelegate.h */,
+				3F0041D617FF6B5A0063360A /* AppDelegate.m */,
+				3F6CD87418032A9F0086F3AF /* ImageSearch.h */,
+				3F6CD87518032A9F0086F3AF /* ImageSearch.m */,
+				3F0041FE17FF6DA60063360A /* ImageRequestManager.h */,
+				3F0041FF17FF6DA60063360A /* ImageRequestManager.m */,
+				3F6CD871180329E70086F3AF /* CoreDataManager.h */,
+				3F6CD872180329E70086F3AF /* CoreDataManager.m */,
+			);
+			name = Objects;
+			sourceTree = "<group>";
+		};
+		3F6CD87818032B7E0086F3AF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E9471B2B180092E0004F614A /* ImageCell.h */,
+				E9471B2C180092E0004F614A /* ImageCell.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		3F6CD87918032B8F0086F3AF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3F0041F917FF6D770063360A /* ImageSearchViewController.h */,
+				3F0041FA17FF6D770063360A /* ImageSearchViewController.m */,
+				3F6CD87B18032BE60086F3AF /* SavedSearchesViewController.h */,
+				3F6CD87C18032BE60086F3AF /* SavedSearchesViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		3F6CD87A18032B980086F3AF /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				3F0041DB17FF6B5A0063360A /* Images.xcassets */,
+				E9471B2E1800A359004F614A /* MissingImage.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,9 +356,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F0041D717FF6B5A0063360A /* AppDelegate.m in Sources */,
+				3F6CD87618032A9F0086F3AF /* ImageSearch.m in Sources */,
+				3F6CD873180329E70086F3AF /* CoreDataManager.m in Sources */,
 				E9471B2D180092E0004F614A /* ImageCell.m in Sources */,
 				3F0041D317FF6B5A0063360A /* main.m in Sources */,
 				3F00420017FF6DA60063360A /* ImageRequestManager.m in Sources */,
+				3F6CD87D18032BE60086F3AF /* SavedSearchesViewController.m in Sources */,
 				3F0041FC17FF6D770063360A /* ImageSearchViewController.m in Sources */,
 				3F0041DA17FF6B5A0063360A /* Google_Image_Search.xcdatamodeld in Sources */,
 			);

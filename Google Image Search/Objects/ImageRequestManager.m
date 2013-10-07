@@ -8,6 +8,7 @@
 
 #import "ImageRequestManager.h"
 #import "AFJSONRequestOperation.h"
+#import "CoreDataManager.h"
 
 #define kBaseEndpointURL @"https://ajax.googleapis.com/ajax/services/search/images?v=1.0&q="
 
@@ -45,6 +46,8 @@
   }];
   
   [operation start];
+  
+  [[CoreDataManager sharedManager] saveSearch:queryString];
   
   return imageRequestManager;
   
