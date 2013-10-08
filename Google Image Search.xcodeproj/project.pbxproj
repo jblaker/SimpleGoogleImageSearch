@@ -1,0 +1,644 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3F0041C517FF6B5A0063360A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F0041C417FF6B5A0063360A /* Foundation.framework */; };
+		3F0041C717FF6B5A0063360A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F0041C617FF6B5A0063360A /* CoreGraphics.framework */; };
+		3F0041C917FF6B5A0063360A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F0041C817FF6B5A0063360A /* UIKit.framework */; };
+		3F0041CB17FF6B5A0063360A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F0041CA17FF6B5A0063360A /* CoreData.framework */; };
+		3F0041D117FF6B5A0063360A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3F0041CF17FF6B5A0063360A /* InfoPlist.strings */; };
+		3F0041D317FF6B5A0063360A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F0041D217FF6B5A0063360A /* main.m */; };
+		3F0041D717FF6B5A0063360A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F0041D617FF6B5A0063360A /* AppDelegate.m */; };
+		3F0041DA17FF6B5A0063360A /* Google_Image_Search.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3F0041D817FF6B5A0063360A /* Google_Image_Search.xcdatamodeld */; };
+		3F0041DC17FF6B5A0063360A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F0041DB17FF6B5A0063360A /* Images.xcassets */; };
+		3F0041E317FF6B5A0063360A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F0041E217FF6B5A0063360A /* XCTest.framework */; };
+		3F0041E417FF6B5A0063360A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F0041C417FF6B5A0063360A /* Foundation.framework */; };
+		3F0041E517FF6B5A0063360A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F0041C817FF6B5A0063360A /* UIKit.framework */; };
+		3F0041E617FF6B5A0063360A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F0041CA17FF6B5A0063360A /* CoreData.framework */; };
+		3F0041EE17FF6B5A0063360A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3F0041EC17FF6B5A0063360A /* InfoPlist.strings */; };
+		3F0041F017FF6B5A0063360A /* Google_Image_SearchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F0041EF17FF6B5A0063360A /* Google_Image_SearchTests.m */; };
+		3F0041FC17FF6D770063360A /* ImageSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F0041FA17FF6D770063360A /* ImageSearchViewController.m */; };
+		3F00420017FF6DA60063360A /* ImageRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F0041FF17FF6DA60063360A /* ImageRequestManager.m */; };
+		3F6CD873180329E70086F3AF /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F6CD872180329E70086F3AF /* CoreDataManager.m */; };
+		3F6CD87618032A9F0086F3AF /* ImageSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F6CD87518032A9F0086F3AF /* ImageSearch.m */; };
+		3F6CD87D18032BE60086F3AF /* SavedSearchesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F6CD87C18032BE60086F3AF /* SavedSearchesViewController.m */; };
+		3F6CD87F1803368B0086F3AF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F0041C617FF6B5A0063360A /* CoreGraphics.framework */; };
+		8860D73244714802BABB8316 /* libPods-Google Image SearchTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F77756CBCD64181B6946AB6 /* libPods-Google Image SearchTests.a */; };
+		8E57B19838B9418CAAF4F20A /* libPods-Google Image Search.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 354C1D2EF19D4E5F810AC438 /* libPods-Google Image Search.a */; };
+		E9471B2D180092E0004F614A /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E9471B2C180092E0004F614A /* ImageCell.m */; };
+		E9471B2F1800A359004F614A /* MissingImage.png in Resources */ = {isa = PBXBuildFile; fileRef = E9471B2E1800A359004F614A /* MissingImage.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3F0041E717FF6B5A0063360A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3F0041B917FF6B5A0063360A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3F0041C017FF6B5A0063360A;
+			remoteInfo = "Google Image Search";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		354C1D2EF19D4E5F810AC438 /* libPods-Google Image Search.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Google Image Search.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F0041C117FF6B5A0063360A /* Google Image Search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Google Image Search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F0041C417FF6B5A0063360A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3F0041C617FF6B5A0063360A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3F0041C817FF6B5A0063360A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3F0041CA17FF6B5A0063360A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		3F0041CE17FF6B5A0063360A /* Google Image Search-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Google Image Search-Info.plist"; sourceTree = "<group>"; };
+		3F0041D017FF6B5A0063360A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3F0041D217FF6B5A0063360A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3F0041D417FF6B5A0063360A /* Google Image Search-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Google Image Search-Prefix.pch"; sourceTree = "<group>"; };
+		3F0041D517FF6B5A0063360A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3F0041D617FF6B5A0063360A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3F0041D917FF6B5A0063360A /* Google_Image_Search.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Google_Image_Search.xcdatamodel; sourceTree = "<group>"; };
+		3F0041DB17FF6B5A0063360A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		3F0041E117FF6B5A0063360A /* Google Image SearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Google Image SearchTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F0041E217FF6B5A0063360A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		3F0041EB17FF6B5A0063360A /* Google Image SearchTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Google Image SearchTests-Info.plist"; sourceTree = "<group>"; };
+		3F0041ED17FF6B5A0063360A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3F0041EF17FF6B5A0063360A /* Google_Image_SearchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Google_Image_SearchTests.m; sourceTree = "<group>"; };
+		3F0041F917FF6D770063360A /* ImageSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageSearchViewController.h; path = Controllers/ImageSearchViewController.h; sourceTree = "<group>"; };
+		3F0041FA17FF6D770063360A /* ImageSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageSearchViewController.m; path = Controllers/ImageSearchViewController.m; sourceTree = "<group>"; };
+		3F0041FE17FF6DA60063360A /* ImageRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageRequestManager.h; path = Objects/ImageRequestManager.h; sourceTree = "<group>"; };
+		3F0041FF17FF6DA60063360A /* ImageRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageRequestManager.m; path = Objects/ImageRequestManager.m; sourceTree = "<group>"; };
+		3F6CD871180329E70086F3AF /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreDataManager.h; path = Objects/CoreDataManager.h; sourceTree = "<group>"; };
+		3F6CD872180329E70086F3AF /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreDataManager.m; path = Objects/CoreDataManager.m; sourceTree = "<group>"; };
+		3F6CD87418032A9F0086F3AF /* ImageSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageSearch.h; path = Objects/ImageSearch.h; sourceTree = "<group>"; };
+		3F6CD87518032A9F0086F3AF /* ImageSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageSearch.m; path = Objects/ImageSearch.m; sourceTree = "<group>"; };
+		3F6CD87B18032BE60086F3AF /* SavedSearchesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SavedSearchesViewController.h; path = Controllers/SavedSearchesViewController.h; sourceTree = "<group>"; };
+		3F6CD87C18032BE60086F3AF /* SavedSearchesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SavedSearchesViewController.m; path = Controllers/SavedSearchesViewController.m; sourceTree = "<group>"; };
+		505BB6B7F78C49E9911D31CD /* Pods-Google Image SearchTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Google Image SearchTests.xcconfig"; path = "Pods/Pods-Google Image SearchTests.xcconfig"; sourceTree = "<group>"; };
+		7F77756CBCD64181B6946AB6 /* libPods-Google Image SearchTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Google Image SearchTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDE6BFD6F02E457DA28C233B /* Pods-Google Image Search.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Google Image Search.xcconfig"; path = "Pods/Pods-Google Image Search.xcconfig"; sourceTree = "<group>"; };
+		E9471B2B180092E0004F614A /* ImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageCell.h; path = Objects/ImageCell.h; sourceTree = "<group>"; };
+		E9471B2C180092E0004F614A /* ImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageCell.m; path = Objects/ImageCell.m; sourceTree = "<group>"; };
+		E9471B2E1800A359004F614A /* MissingImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MissingImage.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3F0041BE17FF6B5A0063360A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F0041C717FF6B5A0063360A /* CoreGraphics.framework in Frameworks */,
+				3F0041CB17FF6B5A0063360A /* CoreData.framework in Frameworks */,
+				3F0041C917FF6B5A0063360A /* UIKit.framework in Frameworks */,
+				3F0041C517FF6B5A0063360A /* Foundation.framework in Frameworks */,
+				8E57B19838B9418CAAF4F20A /* libPods-Google Image Search.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F0041DE17FF6B5A0063360A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F6CD87F1803368B0086F3AF /* CoreGraphics.framework in Frameworks */,
+				3F0041E317FF6B5A0063360A /* XCTest.framework in Frameworks */,
+				3F0041E617FF6B5A0063360A /* CoreData.framework in Frameworks */,
+				3F0041E517FF6B5A0063360A /* UIKit.framework in Frameworks */,
+				3F0041E417FF6B5A0063360A /* Foundation.framework in Frameworks */,
+				8860D73244714802BABB8316 /* libPods-Google Image SearchTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3F0041B817FF6B5A0063360A = {
+			isa = PBXGroup;
+			children = (
+				3F0041CC17FF6B5A0063360A /* Google Image Search */,
+				3F0041E917FF6B5A0063360A /* Google Image SearchTests */,
+				3F0041C317FF6B5A0063360A /* Frameworks */,
+				3F0041C217FF6B5A0063360A /* Products */,
+				CDE6BFD6F02E457DA28C233B /* Pods-Google Image Search.xcconfig */,
+				505BB6B7F78C49E9911D31CD /* Pods-Google Image SearchTests.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		3F0041C217FF6B5A0063360A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3F0041C117FF6B5A0063360A /* Google Image Search.app */,
+				3F0041E117FF6B5A0063360A /* Google Image SearchTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3F0041C317FF6B5A0063360A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3F0041C417FF6B5A0063360A /* Foundation.framework */,
+				3F0041C617FF6B5A0063360A /* CoreGraphics.framework */,
+				3F0041C817FF6B5A0063360A /* UIKit.framework */,
+				3F0041CA17FF6B5A0063360A /* CoreData.framework */,
+				3F0041E217FF6B5A0063360A /* XCTest.framework */,
+				354C1D2EF19D4E5F810AC438 /* libPods-Google Image Search.a */,
+				7F77756CBCD64181B6946AB6 /* libPods-Google Image SearchTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3F0041CC17FF6B5A0063360A /* Google Image Search */ = {
+			isa = PBXGroup;
+			children = (
+				3F6CD87A18032B980086F3AF /* Images */,
+				3F6CD87918032B8F0086F3AF /* Controllers */,
+				3F6CD87818032B7E0086F3AF /* Views */,
+				3F6CD87718032B760086F3AF /* Objects */,
+				3F0041CD17FF6B5A0063360A /* Supporting Files */,
+			);
+			path = "Google Image Search";
+			sourceTree = "<group>";
+		};
+		3F0041CD17FF6B5A0063360A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3F0041D817FF6B5A0063360A /* Google_Image_Search.xcdatamodeld */,
+				3F0041CE17FF6B5A0063360A /* Google Image Search-Info.plist */,
+				3F0041CF17FF6B5A0063360A /* InfoPlist.strings */,
+				3F0041D217FF6B5A0063360A /* main.m */,
+				3F0041D417FF6B5A0063360A /* Google Image Search-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3F0041E917FF6B5A0063360A /* Google Image SearchTests */ = {
+			isa = PBXGroup;
+			children = (
+				3F0041EF17FF6B5A0063360A /* Google_Image_SearchTests.m */,
+				3F0041EA17FF6B5A0063360A /* Supporting Files */,
+			);
+			path = "Google Image SearchTests";
+			sourceTree = "<group>";
+		};
+		3F0041EA17FF6B5A0063360A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3F0041EB17FF6B5A0063360A /* Google Image SearchTests-Info.plist */,
+				3F0041EC17FF6B5A0063360A /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3F6CD87718032B760086F3AF /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				3F0041D517FF6B5A0063360A /* AppDelegate.h */,
+				3F0041D617FF6B5A0063360A /* AppDelegate.m */,
+				3F6CD87418032A9F0086F3AF /* ImageSearch.h */,
+				3F6CD87518032A9F0086F3AF /* ImageSearch.m */,
+				3F0041FE17FF6DA60063360A /* ImageRequestManager.h */,
+				3F0041FF17FF6DA60063360A /* ImageRequestManager.m */,
+				3F6CD871180329E70086F3AF /* CoreDataManager.h */,
+				3F6CD872180329E70086F3AF /* CoreDataManager.m */,
+			);
+			name = Objects;
+			sourceTree = "<group>";
+		};
+		3F6CD87818032B7E0086F3AF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E9471B2B180092E0004F614A /* ImageCell.h */,
+				E9471B2C180092E0004F614A /* ImageCell.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		3F6CD87918032B8F0086F3AF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3F0041F917FF6D770063360A /* ImageSearchViewController.h */,
+				3F0041FA17FF6D770063360A /* ImageSearchViewController.m */,
+				3F6CD87B18032BE60086F3AF /* SavedSearchesViewController.h */,
+				3F6CD87C18032BE60086F3AF /* SavedSearchesViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		3F6CD87A18032B980086F3AF /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				3F0041DB17FF6B5A0063360A /* Images.xcassets */,
+				E9471B2E1800A359004F614A /* MissingImage.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3F0041C017FF6B5A0063360A /* Google Image Search */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F0041F317FF6B5A0063360A /* Build configuration list for PBXNativeTarget "Google Image Search" */;
+			buildPhases = (
+				28D1FAE82C0A40999D31E279 /* Check Pods Manifest.lock */,
+				3F0041BD17FF6B5A0063360A /* Sources */,
+				3F0041BE17FF6B5A0063360A /* Frameworks */,
+				3F0041BF17FF6B5A0063360A /* Resources */,
+				450CC5931A6C44EC8EBB466C /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Google Image Search";
+			productName = "Google Image Search";
+			productReference = 3F0041C117FF6B5A0063360A /* Google Image Search.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3F0041E017FF6B5A0063360A /* Google Image SearchTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F0041F617FF6B5A0063360A /* Build configuration list for PBXNativeTarget "Google Image SearchTests" */;
+			buildPhases = (
+				66CA0840CB69448F855F4E12 /* Check Pods Manifest.lock */,
+				3F0041DD17FF6B5A0063360A /* Sources */,
+				3F0041DE17FF6B5A0063360A /* Frameworks */,
+				3F0041DF17FF6B5A0063360A /* Resources */,
+				4992409E284D41D5BB86CD4B /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3F0041E817FF6B5A0063360A /* PBXTargetDependency */,
+			);
+			name = "Google Image SearchTests";
+			productName = "Google Image SearchTests";
+			productReference = 3F0041E117FF6B5A0063360A /* Google Image SearchTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3F0041B917FF6B5A0063360A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = blakerdesign;
+				TargetAttributes = {
+					3F0041E017FF6B5A0063360A = {
+						TestTargetID = 3F0041C017FF6B5A0063360A;
+					};
+				};
+			};
+			buildConfigurationList = 3F0041BC17FF6B5A0063360A /* Build configuration list for PBXProject "Google Image Search" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3F0041B817FF6B5A0063360A;
+			productRefGroup = 3F0041C217FF6B5A0063360A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3F0041C017FF6B5A0063360A /* Google Image Search */,
+				3F0041E017FF6B5A0063360A /* Google Image SearchTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3F0041BF17FF6B5A0063360A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9471B2F1800A359004F614A /* MissingImage.png in Resources */,
+				3F0041D117FF6B5A0063360A /* InfoPlist.strings in Resources */,
+				3F0041DC17FF6B5A0063360A /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F0041DF17FF6B5A0063360A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F0041EE17FF6B5A0063360A /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		28D1FAE82C0A40999D31E279 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		450CC5931A6C44EC8EBB466C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-Google Image Search-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4992409E284D41D5BB86CD4B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-Google Image SearchTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		66CA0840CB69448F855F4E12 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3F0041BD17FF6B5A0063360A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F0041D717FF6B5A0063360A /* AppDelegate.m in Sources */,
+				3F6CD87618032A9F0086F3AF /* ImageSearch.m in Sources */,
+				3F6CD873180329E70086F3AF /* CoreDataManager.m in Sources */,
+				E9471B2D180092E0004F614A /* ImageCell.m in Sources */,
+				3F0041D317FF6B5A0063360A /* main.m in Sources */,
+				3F00420017FF6DA60063360A /* ImageRequestManager.m in Sources */,
+				3F6CD87D18032BE60086F3AF /* SavedSearchesViewController.m in Sources */,
+				3F0041FC17FF6D770063360A /* ImageSearchViewController.m in Sources */,
+				3F0041DA17FF6B5A0063360A /* Google_Image_Search.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F0041DD17FF6B5A0063360A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3F0041F017FF6B5A0063360A /* Google_Image_SearchTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3F0041E817FF6B5A0063360A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3F0041C017FF6B5A0063360A /* Google Image Search */;
+			targetProxy = 3F0041E717FF6B5A0063360A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3F0041CF17FF6B5A0063360A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F0041D017FF6B5A0063360A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		3F0041EC17FF6B5A0063360A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3F0041ED17FF6B5A0063360A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3F0041F117FF6B5A0063360A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				VALID_ARCHS = "armv7 armv7s";
+			};
+			name = Debug;
+		};
+		3F0041F217FF6B5A0063360A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "armv7 armv7s";
+			};
+			name = Release;
+		};
+		3F0041F417FF6B5A0063360A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CDE6BFD6F02E457DA28C233B /* Pods-Google Image Search.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Google Image Search/Google Image Search-Prefix.pch";
+				INFOPLIST_FILE = "Google Image Search/Google Image Search-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "armv7 armv7s";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		3F0041F517FF6B5A0063360A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CDE6BFD6F02E457DA28C233B /* Pods-Google Image Search.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Google Image Search/Google Image Search-Prefix.pch";
+				INFOPLIST_FILE = "Google Image Search/Google Image Search-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "armv7 armv7s";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		3F0041F717FF6B5A0063360A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 505BB6B7F78C49E9911D31CD /* Pods-Google Image SearchTests.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Google Image Search.app/Google Image Search";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Google Image Search/Google Image Search-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Google Image SearchTests/Google Image SearchTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		3F0041F817FF6B5A0063360A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 505BB6B7F78C49E9911D31CD /* Pods-Google Image SearchTests.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Google Image Search.app/Google Image Search";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Google Image Search/Google Image Search-Prefix.pch";
+				INFOPLIST_FILE = "Google Image SearchTests/Google Image SearchTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3F0041BC17FF6B5A0063360A /* Build configuration list for PBXProject "Google Image Search" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F0041F117FF6B5A0063360A /* Debug */,
+				3F0041F217FF6B5A0063360A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F0041F317FF6B5A0063360A /* Build configuration list for PBXNativeTarget "Google Image Search" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F0041F417FF6B5A0063360A /* Debug */,
+				3F0041F517FF6B5A0063360A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F0041F617FF6B5A0063360A /* Build configuration list for PBXNativeTarget "Google Image SearchTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F0041F717FF6B5A0063360A /* Debug */,
+				3F0041F817FF6B5A0063360A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3F0041D817FF6B5A0063360A /* Google_Image_Search.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3F0041D917FF6B5A0063360A /* Google_Image_Search.xcdatamodel */,
+			);
+			currentVersion = 3F0041D917FF6B5A0063360A /* Google_Image_Search.xcdatamodel */;
+			path = Google_Image_Search.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 3F0041B917FF6B5A0063360A /* Project object */;
+}
