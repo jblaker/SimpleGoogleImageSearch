@@ -43,10 +43,10 @@ static id mockCoreDataManager = nil;
 
 - (void)testEndpointURL {
   NSString *urlString = [[_imageRequestManager endpointURLForQueryString:@"test" startingAt:0 andNumberOfResults:5] absoluteString];
-  XCTAssertTrue([urlString isEqualToString:@"https://ajax.googleapis.com/ajax/services/search/images?v=1.0&q=test&rsz=5&start=0"], @"URL Absolute String should match");
+  XCTAssertTrue([urlString isEqualToString:@"https://ajax.googleapis.com/ajax/services/search/images?v=1.0&q=test&rsz=5&start=0&size=med"], @"URL Absolute String should match");
   
   urlString = [[_imageRequestManager endpointURLForQueryString:@"test" startingAt:5 andNumberOfResults:8] absoluteString];
-  XCTAssertTrue([urlString isEqualToString:@"https://ajax.googleapis.com/ajax/services/search/images?v=1.0&q=test&rsz=8&start=5"], @"URL Absolute String should match");
+  XCTAssertTrue([urlString isEqualToString:@"https://ajax.googleapis.com/ajax/services/search/images?v=1.0&q=test&rsz=8&start=5&size=med"], @"URL Absolute String should match");
 }
 
 - (void)testImageRequestManagerCalled {

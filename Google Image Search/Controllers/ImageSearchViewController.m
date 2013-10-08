@@ -11,6 +11,7 @@
 #import "MBProgressHUD.h"
 #import "ImageCell.h"
 #import "SavedSearchesViewController.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 #define kThreeImageCellIdentifier @"ThreeImageCell"
 
@@ -23,7 +24,7 @@ typedef enum {
   NSMutableArray *_images;
   MBProgressHUD *_hud;
   int _currentPageIndex;
-  BOOL _isRequestinImages;
+  BOOL _isRequestingImages;
   UITextField *_searchQueryTextField;
   UIAlertView *_searchQueryAlertView;
   BOOL _hasShownAutoPopup;
@@ -82,7 +83,7 @@ typedef enum {
   // NSLog(@"pos: %f of %f", y, h);
   
   float reload_distance = 0;
-  if(y > h + reload_distance && _images.count > 1 && _isRequestinImages == NO) {
+  if(y > h + reload_distance && _images.count > 1 && _isRequestingImages == NO) {
     [self requestMoreImages];
   }
 }
@@ -122,7 +123,7 @@ typedef enum {
     _hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [_hud setLabelText:@"Searching..."];
     
-    _isRequestinImages = YES;
+    _isRequestingImages = YES;
     
     _currentPageIndex++;
 
@@ -130,11 +131,7 @@ typedef enum {
     
     [_imageRequestManager fetchMoreImageResultsStartingAt:startAt success:^(NSDictionary *response) {
       
-      [_images addObjectsFromArray:[[response objectForKey:@"responseData"] objectForKey:@"results"]];
-      [[self collectionView] reloadData];
-
-      [_hud hide:YES];
-      _isRequestinImages = NO;
+      [self responseWasSuccessful:[[response objectForKey:@"responseData"] objectForKey:@"results"]];
       
     } failure:^(NSError *error) {
       [self showErrorAlertForError:error];
@@ -145,18 +142,26 @@ typedef enum {
 }
 
 - (void)showErrorAlertForError:(NSError *)error {
+  [_hud hide:YES];
+  _isRequestingImages = NO;
+  
   // The the error alert is already displayed don't display it again
   if ( [_errorMessageAlert isVisible] ) { return; }
   NSString *errorMessage = error.localizedDescription ? error.localizedDescription : @"There was en error. Please try again";
   _errorMessageAlert = [[UIAlertView alloc] initWithTitle:@"Error" message:errorMessage delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles: nil];
   [_errorMessageAlert show];
+}
+
+- (void)responseWasSuccessful:(NSArray *)images {
+  [_images addObjectsFromArray:images];
+  [[self collectionView] reloadData];
   [_hud hide:YES];
-  _isRequestinImages = NO;
+  _isRequestingImages = NO;
 }
 
 - (void)doSearchWithString:(NSString *)queryString {
   
-  _isRequestinImages = YES;
+  _isRequestingImages = YES;
   
   // Show the loading view
   _hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
@@ -174,12 +179,8 @@ typedef enum {
     [_imageRequestManager fetchMoreImageResultsStartingAt:startAt success:^(NSDictionary *response) {
       
       _currentPageIndex = 2;
-      [_images addObjectsFromArray:[[response objectForKey:@"responseData"] objectForKey:@"results"]];
-      
-      [_hud hide:YES];
-      [[self collectionView] reloadData];
+      [self responseWasSuccessful:[[response objectForKey:@"responseData"] objectForKey:@"results"]];
       [[self collectionView] scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0] atScrollPosition:PSTCollectionViewScrollPositionTop animated:NO];
-      _isRequestinImages = NO;
       
     } failure:^(NSError *error) {
       [self showErrorAlertForError:error];
@@ -209,7 +210,7 @@ typedef enum {
       [self doSearchWithString:[[alertView textFieldAtIndex:0] text]];
       break;
     default:
-      _isRequestinImages = NO;
+      _isRequestingImages = NO;
   }
 }
 
@@ -223,6 +224,10 @@ typedef enum {
   ImageCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kThreeImageCellIdentifier forIndexPath:indexPath];
   [cell loadImage:[_images objectAtIndex:indexPath.item]];
   return cell;
+}
+
+- (void)didReceiveMemoryWarning {
+  [super didReceiveMemoryWarning];
 }
 
 @end

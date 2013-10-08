@@ -77,7 +77,7 @@
 }
 
 - (NSURL *)endpointURLForQueryString:(NSString *)queryString startingAt:(int)startAt andNumberOfResults:(int)numberOfResults {
-  NSString *urlString = [[NSString stringWithFormat:@"%@%@&rsz=%i&start=%i", kBaseEndpointURL, queryString, numberOfResults, startAt] stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
+  NSString *urlString = [[NSString stringWithFormat:@"%@%@&rsz=%i&start=%i&size=med", kBaseEndpointURL, queryString, numberOfResults, startAt] stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
   NSURL *queryURL = [NSURL URLWithString:urlString];
   return queryURL;
 }
