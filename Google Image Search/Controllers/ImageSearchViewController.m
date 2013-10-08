@@ -27,6 +27,7 @@ typedef enum {
   UITextField *_searchQueryTextField;
   UIAlertView *_searchQueryAlertView;
   BOOL _hasShownAutoPopup;
+  UIAlertView *_errorMessageAlert;
 }
 
 @end
@@ -137,8 +138,6 @@ typedef enum {
       
     } failure:^(NSError *error) {
       [self showErrorAlertForError:error];
-      [_hud hide:YES];
-      _isRequestinImages = NO;
     }];
   
   }
@@ -146,9 +145,13 @@ typedef enum {
 }
 
 - (void)showErrorAlertForError:(NSError *)error {
+  // The the error alert is already displayed don't display it again
+  if ( [_errorMessageAlert isVisible] ) { return; }
   NSString *errorMessage = error.localizedDescription ? error.localizedDescription : @"There was en error. Please try again";
-  UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Error" message:errorMessage delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles: nil];
-  [errorAlert show];
+  _errorMessageAlert = [[UIAlertView alloc] initWithTitle:@"Error" message:errorMessage delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles: nil];
+  [_errorMessageAlert show];
+  [_hud hide:YES];
+  _isRequestinImages = NO;
 }
 
 - (void)doSearchWithString:(NSString *)queryString {
@@ -180,14 +183,10 @@ typedef enum {
       
     } failure:^(NSError *error) {
       [self showErrorAlertForError:error];
-      [_hud hide:YES];
     }];
     
   } failure:^(NSError *error) {
-    
     [self showErrorAlertForError:error];
-    [_hud hide:YES];
-    
   }];
 }
 

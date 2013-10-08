@@ -7,7 +7,7 @@ Search history is retained so you can go back view previous searches.
 ![image](http://dev.blakerdesign.com/misc/img/image-search.png)
 
 ## Tests
-Unit tests can be run by hitting ⌘+U or by using the **Test** menu item under **Products**.
+Unit tests can be run by hitting ⌘+U or by using the **Test** menu item under **Products**. The tests must be run in XCode 5 with a simulator running iOS 7.
 
 ## Dependencies
 * [AFNetworking](https://github.com/AFNetworking/AFNetworking) - Used for API requests
