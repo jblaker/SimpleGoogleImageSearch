@@ -210,7 +210,7 @@ typedef enum {
       [self doSearchWithString:[[alertView textFieldAtIndex:0] text]];
       break;
     default:
-      _isRequestinImages = YES;
+      _isRequestinImages = NO;
   }
 }
 
