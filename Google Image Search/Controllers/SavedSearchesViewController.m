@@ -32,6 +32,7 @@
   [self setTitle:@"Search History"];
   [[[self navigationController] navigationBar] setTintColor:[UIColor darkGrayColor]];
   [self buildBarButtonItems];
+  [self reloadFetchedResults:nil];
 }
 
 - (void)buildBarButtonItems {

@@ -112,7 +112,6 @@ typedef enum {
     [self doSearchWithString:searchQuery];
   }];
   UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:savedSearchesVC];
-  [navController setModalTransitionStyle:UIModalTransitionStyleFlipHorizontal];
   [self presentViewController:navController animated:YES completion:nil];
 }
 
@@ -137,13 +136,19 @@ typedef enum {
       _isRequestinImages = NO;
       
     } failure:^(NSError *error) {
-      NSLog(@"%@", error.localizedDescription);
+      [self showErrorAlertForError:error];
       [_hud hide:YES];
       _isRequestinImages = NO;
     }];
   
   }
   
+}
+
+- (void)showErrorAlertForError:(NSError *)error {
+  NSString *errorMessage = error.localizedDescription ? error.localizedDescription : @"There was en error. Please try again";
+  UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Error" message:errorMessage delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles: nil];
+  [errorAlert show];
 }
 
 - (void)doSearchWithString:(NSString *)queryString {
@@ -170,16 +175,17 @@ typedef enum {
       
       [_hud hide:YES];
       [[self collectionView] reloadData];
+      [[self collectionView] scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:0 inSection:0] atScrollPosition:PSTCollectionViewScrollPositionTop animated:NO];
       _isRequestinImages = NO;
       
     } failure:^(NSError *error) {
-      NSLog(@"%@", error.localizedDescription);
+      [self showErrorAlertForError:error];
       [_hud hide:YES];
     }];
     
   } failure:^(NSError *error) {
     
-    NSLog(@"%@", error.localizedDescription);
+    [self showErrorAlertForError:error];
     [_hud hide:YES];
     
   }];
